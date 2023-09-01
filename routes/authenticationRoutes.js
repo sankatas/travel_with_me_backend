@@ -1,6 +1,6 @@
 import express from "express";
 
-import { LoginAppCtrl} from '../controllers/authenticationController.js'
+import { LoginAppCtrl, createUserCtrl} from '../controllers/authenticationController.js'
 
 import Jwt from 'jsonwebtoken';
 const {jwt}=Jwt;
@@ -26,5 +26,6 @@ function verifyToken(req, res, next) {
 const route = express.Router()
 
 route.post("/login", LoginAppCtrl)
+route.post("/create", createUserCtrl)
 
 export default route;

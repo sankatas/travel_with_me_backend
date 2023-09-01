@@ -6,6 +6,7 @@ const app = express();
 const server = http.createServer(app);
 import cors from 'cors';
 import autenticationRoute from "./routes/authenticationRoutes.js"
+import reveiwRoute from "./routes/reveiwRoutes.js"
 
 
 dotenv.config();
@@ -44,7 +45,7 @@ app.use(function (req, res, next) {
 });
 
 app.use("/travel_with_me/autenticate", autenticationRoute);
-
+app.use("/travel_with_me/reveiws", reveiwRoute);
 
 
 const PORT = process.env.PORT ;
